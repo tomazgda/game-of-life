@@ -1,2 +1,6 @@
 (executable
- (name main))
+ (name main)
+ (libraries incr_dom)
+ (modes js)
+ (preprocess
+  (pps ppx_jane js_of_ocaml-ppx)))

@@ -1,0 +1,14 @@
+body {
+    background-color: darkslateblue;
+}
+
+td {
+    padding: 0;
+    margin: 0;
+    border: 1px double black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
