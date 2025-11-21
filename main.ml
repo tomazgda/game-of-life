@@ -21,17 +21,15 @@ module App = struct
   end
 
   let initial_model =
-
     let glider_gun =
-      Patterns.glider_gun
-      |> List.map ~f:(fun (x, y) -> (x + 1, y + 1))
+      Patterns.glider_gun |> List.map ~f:(fun (x, y) -> (x + 1, y + 1))
       (* shift glider gun by a bit *)
     in
 
     let starting_board =
       Engine.Board.empty |> Engine.Board.add_cells glider_gun
     in
-    
+
     let open Js_of_ocaml in
     {
       Model.board = starting_board;
@@ -41,7 +39,6 @@ module App = struct
 
   let on_startup ~schedule_action _model =
     let open Js_of_ocaml in
-
     (* Tick every 0.25s -- TODO: make async *)
     every (Time_ns.Span.of_sec 0.25) (fun () -> schedule_action Action.Tick);
 
